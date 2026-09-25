@@ -1,0 +1,36 @@
+# devonbate.com. Plain static site, no build step.
+# Per-path headers (caching, admin noindex) live in _headers.
+
+[build]
+  publish = "."
+  command = ""
+
+# Netlify's post-processing rewrites .html links to extension-less urls. The
+# pages will carry canonical tags that must match the served url exactly, so
+# post-processing stays off and urls stay literal.
+[build.processing]
+  skip_processing = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Collapse the duplicate url for the landing page onto its canonical form.
+# force = true is needed because the file exists; Netlify still serves /
+# from index.html internally, no loop.
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+# Section pages are directory indexes (/work/, /research/, /about/,
+# /contact/). Their /index.html variants collapse the same way.
+[[redirects]]
+  from = "/:section/index.html"
+  to = "/:section/"
+  status = 301
+  force = true

@@ -1,0 +1,48 @@
+# Per-path headers for Netlify.
+
+# --- Caching ---------------------------------------------------------------
+# The runtime under /vendor is pinned and only changes when it is replaced
+# deliberately, so it can be cached hard. The design system lives in a
+# content-hashed directory (a rebuild changes the path), so it can be cached
+# hard too. Images get a month; they change rarely and a stale copy is
+# cosmetic only. HTML must revalidate so a copy fix goes live on the next
+# request rather than whenever a cache expires.
+
+/vendor/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/_ds/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Self-hosted fonts: the file names carry the face and weight, and a new
+# face gets a new name, so they can be cached hard too.
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/img/*
+  Cache-Control: public, max-age=2592000
+
+/assets/*
+  Cache-Control: public, max-age=2592000
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Directory-index section pages: the /*.html rule above cannot match
+# /work/ style requests, so give them the same revalidation rule.
+/work/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+/research/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+/about/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+/contact/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+# The copy admin is an editing surface, never a search result.
+/admin/*
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store
