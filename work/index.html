@@ -157,8 +157,7 @@ code,kbd{font-family:var(--font-mono);font-size:0.92em}
 .chips { display: flex; gap: var(--space-3); flex-wrap: wrap; margin: var(--space-7) 0 0; padding: 0; list-style: none; }
 .chip { display: inline-flex; align-items: center; padding: 4px 8px; font-family: var(--font-meta); font-size: var(--size-micro); letter-spacing: var(--tracking-caps); text-transform: uppercase; line-height: 1.2; border: 1px solid var(--line-hairline); color: var(--text-muted); background: transparent; cursor: pointer; transition: var(--transition-hover); white-space: nowrap; }
 .chip:hover, .chip[aria-pressed="true"] { border-color: var(--ink-900); color: var(--paper-100); background: var(--ink-900); }
-.count { margin: var(--space-7) 0 0; }
-.list { margin-top: var(--space-3); border-top: 1px solid var(--line-strong); }
+.list { margin-top: var(--space-7); border-top: 1px solid var(--line-strong); }
 .cv { border-top: 1px solid var(--line-strong); }
 .cv__row { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: var(--space-5); padding: var(--space-4) 0; border-bottom: 1px solid var(--line-hairline); }
 .cv__year { font-family: var(--font-meta); font-size: var(--size-meta); color: var(--text-faint); }
@@ -255,7 +254,6 @@ padding-right: max(var(--page-margin), env(safe-area-inset-right));
         <li><a class="chip" href="#installation" role="button" data-filter="installation" aria-pressed="false">Installation</a></li>
         <li><a class="chip" href="#composition" role="button" data-filter="composition" aria-pressed="false">Composition</a></li>
       </ul>
-      <p class="count meta meta--faint" id="count" aria-live="polite">74 entries, newest first</p>
       <ol class="list">
       <li class="row" id="askiwan" data-category="installation theatre">
         <span class="row__title">Askîwan</span>
@@ -743,24 +741,21 @@ padding-right: max(var(--page-margin), env(safe-area-inset-right));
 (function () {
   var chips = document.querySelectorAll('.chip');
   var rows = document.querySelectorAll('.list .row');
-  var count = document.getElementById('count');
   var keys = {};
   chips.forEach(function (c) { keys[c.getAttribute('data-filter')] = true; });
   function apply() {
     var key = (location.hash || '#all').slice(1);
     if (!keys[key]) key = 'all';
-    var n = 0;
     rows.forEach(function (r) {
       var on = key === 'all' || (' ' + r.getAttribute('data-category') + ' ').indexOf(' ' + key + ' ') !== -1;
       if (on && r.hidden) { r.classList.add('is-entering'); requestAnimationFrame(function () { r.classList.remove('is-entering'); }); }
-      r.hidden = !on; if (on) n += 1;
+      r.hidden = !on;
     });
     chips.forEach(function (c) {
       var on = c.getAttribute('data-filter') === key;
       c.setAttribute('aria-pressed', on ? 'true' : 'false');
       if (on && c.scrollIntoView) c.scrollIntoView({ block: 'nearest', inline: 'nearest' });
     });
-    count.textContent = n + (n === 1 ? ' entry' : ' entries') + ', newest first';
   }
   window.addEventListener('hashchange', apply);
   apply();
