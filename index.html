@@ -160,6 +160,29 @@ code,kbd{font-family:var(--font-mono);font-size:0.92em}
 .chip { display: inline-flex; align-items: center; padding: 4px 8px; font-family: var(--font-meta); font-size: var(--size-micro); letter-spacing: var(--tracking-caps); text-transform: uppercase; line-height: 1.2; border: 1px solid var(--line-hairline); color: var(--text-muted); background: transparent; cursor: pointer; transition: var(--transition-hover); white-space: nowrap; }
 .chip:hover, .chip[aria-pressed="true"] { border-color: var(--ink-900); color: var(--paper-100); background: var(--ink-900); }
 .list { margin-top: var(--space-7); border-top: 1px solid var(--line-strong); }
+.records { padding-bottom: var(--space-10); }
+.covers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 47px; row-gap: 113px; align-items: start; }
+.covers__col { display: grid; gap: 113px; align-content: start; }
+.covers__col--offset { padding-top: 41.42%; }
+.cover { display: block; border-bottom: none; color: inherit; container-type: inline-size; container-name: card; transition: color var(--duration-fast) var(--ease-standard); }
+.cover:hover { color: var(--signal-500); }
+.cover img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; filter: grayscale(1); transition: filter var(--duration-slow) var(--ease-standard); }
+.cover:hover img { filter: grayscale(0); }
+@media (hover: none) { .cover img { filter: none; } }
+.cover__cap { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); column-gap: var(--space-5); row-gap: var(--space-1); padding: var(--space-3) 0 0; border-top: 1px solid var(--line-hairline); margin-top: var(--space-3); }
+.cover__title { font-size: var(--size-subheading); font-weight: var(--weight-medium); letter-spacing: var(--tracking-heading); line-height: var(--leading-tight); }
+.cover__year { font-family: var(--font-meta); font-size: var(--size-meta); color: var(--text-faint); text-align: right; }
+.cover__for { font-size: var(--size-body-sm); color: var(--text-secondary); }
+.cover__role { font-family: var(--font-meta); font-size: var(--size-meta); letter-spacing: var(--tracking-meta); color: var(--text-muted); text-align: right; }
+@container card (max-width: 340px) {
+.cover__cap { grid-template-columns: minmax(0, 1fr); }
+.cover__cap > span { text-align: left; }
+}
+@media (max-width: 600px) {
+.covers { grid-template-columns: 1fr; row-gap: var(--space-9); }
+.covers__col { gap: var(--space-9); }
+.covers__col--offset { padding-top: 0; }
+}
 .cv { border-top: 1px solid var(--line-strong); }
 .cv__row { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: var(--space-5); padding: var(--space-4) 0; border-bottom: 1px solid var(--line-hairline); }
 .cv__year { font-family: var(--font-meta); font-size: var(--size-meta); color: var(--text-faint); }
@@ -295,6 +318,277 @@ padding-right: max(var(--page-margin), env(safe-area-inset-right));
         <span class="row__role">Composition and live performance</span>
       </li>
       </ol>
+    </section>
+    <section class="section records">
+      <div class="section-head">
+        <h2>Records</h2>
+      </div>
+      <div class="covers">
+        <div class="covers__col">
+        <a class="cover" href="https://jeanmichelblais.bandcamp.com/album/mirador" target="_blank" rel="noopener">
+          <picture>
+            <source type="image/avif" srcset="/img/covers/blais-mirador-400.avif 400w, /img/covers/blais-mirador-640.avif 640w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <source type="image/webp" srcset="/img/covers/blais-mirador-400.webp 400w, /img/covers/blais-mirador-640.webp 640w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <img src="/img/covers/blais-mirador-640.jpg" width="640" height="640" alt="Mirador, Jean-Michel Blais, album cover" loading="lazy" decoding="async">
+          </picture>
+          <div class="cover__cap">
+            <span class="cover__title">Mirador</span>
+            <span class="cover__year"><time datetime="2026">2026</time></span>
+            <span class="cover__for">Jean-Michel Blais</span>
+            <span class="cover__role">Producer</span>
+          </div>
+        </a>
+        <a class="cover" href="https://eriklankinmusic.com/icarus" target="_blank" rel="noopener">
+          <picture>
+            <source type="image/avif" srcset="/img/covers/erik-lankin-icarus-400.avif 400w, /img/covers/erik-lankin-icarus-640.avif 640w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <source type="image/webp" srcset="/img/covers/erik-lankin-icarus-400.webp 400w, /img/covers/erik-lankin-icarus-640.webp 640w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <img src="/img/covers/erik-lankin-icarus-640.jpg" width="640" height="640" alt="Icarus, Erik Lankin, album cover" loading="lazy" decoding="async">
+          </picture>
+          <div class="cover__cap">
+            <span class="cover__title">Icarus</span>
+            <span class="cover__year"><time datetime="2025">2025</time></span>
+            <span class="cover__for">Erik Lankin</span>
+            <span class="cover__role">Producer, co-composer</span>
+          </div>
+        </a>
+        <a class="cover" href="https://www.secretcityrecords.com/products/motewolonuwok" target="_blank" rel="noopener">
+          <picture>
+            <source type="image/avif" srcset="/img/covers/dutcher-motewolonuwok-400.avif 400w, /img/covers/dutcher-motewolonuwok-640.avif 640w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <source type="image/webp" srcset="/img/covers/dutcher-motewolonuwok-400.webp 400w, /img/covers/dutcher-motewolonuwok-640.webp 640w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <img src="/img/covers/dutcher-motewolonuwok-640.jpg" width="640" height="640" alt="Motewolonuwok, Jeremy Dutcher, album cover" loading="lazy" decoding="async">
+          </picture>
+          <div class="cover__cap">
+            <span class="cover__title">Motewolonuwok</span>
+            <span class="cover__year"><time datetime="2023">2023</time></span>
+            <span class="cover__for">Jeremy Dutcher</span>
+            <span class="cover__role">Producer</span>
+          </div>
+        </a>
+        <a class="cover" href="https://classical.music.apple.com/ca/album/1587381634" target="_blank" rel="noopener">
+          <picture>
+            <source type="image/avif" srcset="/img/covers/blais-aubades-400.avif 400w, /img/covers/blais-aubades-640.avif 640w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <source type="image/webp" srcset="/img/covers/blais-aubades-400.webp 400w, /img/covers/blais-aubades-640.webp 640w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <img src="/img/covers/blais-aubades-640.jpg" width="640" height="640" alt="Aubades, Jean-Michel Blais, album cover" loading="lazy" decoding="async">
+          </picture>
+          <div class="cover__cap">
+            <span class="cover__title">Aubades</span>
+            <span class="cover__year"><time datetime="2022">2022</time></span>
+            <span class="cover__for">Jean-Michel Blais</span>
+            <span class="cover__role">Producer</span>
+          </div>
+        </a>
+        <a class="cover" href="https://melodymckiver.bandcamp.com/track/debiinaawe-giizhigon" target="_blank" rel="noopener">
+          <picture>
+            <source type="image/avif" srcset="/img/covers/melody-mckiver-debiinawe-giizhigon-400.avif 400w, /img/covers/melody-mckiver-debiinawe-giizhigon-640.avif 640w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <source type="image/webp" srcset="/img/covers/melody-mckiver-debiinawe-giizhigon-400.webp 400w, /img/covers/melody-mckiver-debiinawe-giizhigon-640.webp 640w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <img src="/img/covers/melody-mckiver-debiinawe-giizhigon-640.jpg" width="640" height="640" alt="Debiinawe Giizhigon, Melody McKiver, album cover" loading="lazy" decoding="async">
+          </picture>
+          <div class="cover__cap">
+            <span class="cover__title">Debiinawe Giizhigon</span>
+            <span class="cover__year"><time datetime="2019">2019</time></span>
+            <span class="cover__for">Melody McKiver</span>
+            <span class="cover__role">Producer</span>
+          </div>
+        </a>
+        <a class="cover" href="https://commonholly.bandcamp.com/album/when-i-say-to-you-black-lightning" target="_blank" rel="noopener">
+          <picture>
+            <source type="image/avif" srcset="/img/covers/common-holly-when-i-say-to-you-black-lightning-400.avif 400w, /img/covers/common-holly-when-i-say-to-you-black-lightning-640.avif 640w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <source type="image/webp" srcset="/img/covers/common-holly-when-i-say-to-you-black-lightning-400.webp 400w, /img/covers/common-holly-when-i-say-to-you-black-lightning-640.webp 640w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <img src="/img/covers/common-holly-when-i-say-to-you-black-lightning-640.jpg" width="640" height="640" alt="When I Say To You Black Lightning, Common Holly, album cover" loading="lazy" decoding="async">
+          </picture>
+          <div class="cover__cap">
+            <span class="cover__title">When I Say To You Black Lightning</span>
+            <span class="cover__year"><time datetime="2019">2019</time></span>
+            <span class="cover__for">Common Holly</span>
+            <span class="cover__role">Producer</span>
+          </div>
+        </a>
+        <a class="cover" href="https://jeanmichelblais.bandcamp.com/album/dans-ma-main" target="_blank" rel="noopener">
+          <picture>
+            <source type="image/avif" srcset="/img/covers/blais-dans-ma-main-400.avif 400w, /img/covers/blais-dans-ma-main-640.avif 640w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <source type="image/webp" srcset="/img/covers/blais-dans-ma-main-400.webp 400w, /img/covers/blais-dans-ma-main-640.webp 640w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <img src="/img/covers/blais-dans-ma-main-640.jpg" width="640" height="640" alt="Dans ma main, Jean-Michel Blais, album cover" loading="lazy" decoding="async">
+          </picture>
+          <div class="cover__cap">
+            <span class="cover__title">Dans ma main</span>
+            <span class="cover__year"><time datetime="2018">2018</time></span>
+            <span class="cover__for">Jean-Michel Blais</span>
+            <span class="cover__role">Producer</span>
+          </div>
+        </a>
+        <a class="cover" href="https://jeremydutcher1.bandcamp.com/album/wolastoqiyik-lintuwakonawa" target="_blank" rel="noopener">
+          <picture>
+            <source type="image/avif" srcset="/img/covers/dutcher-wolastoqiyik-lintuwakonawa-400.avif 400w, /img/covers/dutcher-wolastoqiyik-lintuwakonawa-640.avif 640w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <source type="image/webp" srcset="/img/covers/dutcher-wolastoqiyik-lintuwakonawa-400.webp 400w, /img/covers/dutcher-wolastoqiyik-lintuwakonawa-640.webp 640w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <img src="/img/covers/dutcher-wolastoqiyik-lintuwakonawa-640.jpg" width="640" height="640" alt="Wolastoqiyik Lintuwakonawa, Jeremy Dutcher, album cover" loading="lazy" decoding="async">
+          </picture>
+          <div class="cover__cap">
+            <span class="cover__title">Wolastoqiyik Lintuwakonawa</span>
+            <span class="cover__year"><time datetime="2018">2018</time></span>
+            <span class="cover__for">Jeremy Dutcher</span>
+            <span class="cover__role">Producer</span>
+          </div>
+        </a>
+        <a class="cover" href="https://commonholly.bandcamp.com/album/playing-house-2" target="_blank" rel="noopener">
+          <picture>
+            <source type="image/avif" srcset="/img/covers/common-holly-playing-house-400.avif 400w, /img/covers/common-holly-playing-house-800.avif 800w, /img/covers/common-holly-playing-house-1200.avif 1200w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <source type="image/webp" srcset="/img/covers/common-holly-playing-house-400.webp 400w, /img/covers/common-holly-playing-house-800.webp 800w, /img/covers/common-holly-playing-house-1200.webp 1200w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <img src="/img/covers/common-holly-playing-house-800.jpg" width="800" height="800" alt="Playing House, Common Holly, album cover" loading="lazy" decoding="async">
+          </picture>
+          <div class="cover__cap">
+            <span class="cover__title">Playing House</span>
+            <span class="cover__year"><time datetime="2016">2016</time></span>
+            <span class="cover__for">Common Holly</span>
+            <span class="cover__role">Producer</span>
+          </div>
+        </a>
+        <a class="cover" href="https://bufflo.bandcamp.com/album/unseamd" target="_blank" rel="noopener">
+          <picture>
+            <source type="image/avif" srcset="/img/covers/bufflo-unseamd-400.avif 400w, /img/covers/bufflo-unseamd-800.avif 800w, /img/covers/bufflo-unseamd-1000.avif 1000w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <source type="image/webp" srcset="/img/covers/bufflo-unseamd-400.webp 400w, /img/covers/bufflo-unseamd-800.webp 800w, /img/covers/bufflo-unseamd-1000.webp 1000w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <img src="/img/covers/bufflo-unseamd-800.jpg" width="800" height="800" alt="Unseam'd, Bufflo, album cover" loading="lazy" decoding="async">
+          </picture>
+          <div class="cover__cap">
+            <span class="cover__title">Unseam'd</span>
+            <span class="cover__year"><time datetime="2014">2014</time></span>
+            <span class="cover__for">Bufflo</span>
+            <span class="cover__role">Composer, producer</span>
+          </div>
+        </a>
+        </div>
+        <div class="covers__col covers__col--offset">
+        <a class="cover" href="https://keeledscales.com/products/common_holly_anything_glass" target="_blank" rel="noopener">
+          <picture>
+            <source type="image/avif" srcset="/img/covers/common-holly-anything-glass-400.avif 400w, /img/covers/common-holly-anything-glass-640.avif 640w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <source type="image/webp" srcset="/img/covers/common-holly-anything-glass-400.webp 400w, /img/covers/common-holly-anything-glass-640.webp 640w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <img src="/img/covers/common-holly-anything-glass-640.jpg" width="640" height="640" alt="Anything glass, Common Holly, album cover" loading="lazy" decoding="async">
+          </picture>
+          <div class="cover__cap">
+            <span class="cover__title">Anything glass</span>
+            <span class="cover__year"><time datetime="2025">2025</time></span>
+            <span class="cover__for">Common Holly</span>
+            <span class="cover__role">Producer</span>
+          </div>
+        </a>
+        <a class="cover" href="https://www.universalmusic.ca/2025/03/14/jean-michel-blais-and-lara-somogyi-collaborate-on-an-entirely-improvised-new-album-desert-out-now/" target="_blank" rel="noopener">
+          <picture>
+            <source type="image/avif" srcset="/img/covers/blais-le-desert-400.avif 400w, /img/covers/blais-le-desert-640.avif 640w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <source type="image/webp" srcset="/img/covers/blais-le-desert-400.webp 400w, /img/covers/blais-le-desert-640.webp 640w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <img src="/img/covers/blais-le-desert-640.jpg" width="640" height="640" alt="Le désert, Jean-Michel Blais, album cover" loading="lazy" decoding="async">
+          </picture>
+          <div class="cover__cap">
+            <span class="cover__title">Le désert</span>
+            <span class="cover__year"><time datetime="2025">2025</time></span>
+            <span class="cover__for">Jean-Michel Blais</span>
+            <span class="cover__role">Producer</span>
+          </div>
+        </a>
+        <a class="cover" href="https://devonbate.bandcamp.com/album/you-couldnt-ask-for-a-more-beautiful-day" target="_blank" rel="noopener">
+          <picture>
+            <source type="image/avif" srcset="/img/covers/the-weather-holds-you-couldnt-ask-400.avif 400w, /img/covers/the-weather-holds-you-couldnt-ask-640.avif 640w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <source type="image/webp" srcset="/img/covers/the-weather-holds-you-couldnt-ask-400.webp 400w, /img/covers/the-weather-holds-you-couldnt-ask-640.webp 640w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <img src="/img/covers/the-weather-holds-you-couldnt-ask-640.jpg" width="640" height="640" alt="You Couldn't Ask For a More Beautiful Day, The Weather Holds, album cover" loading="lazy" decoding="async">
+          </picture>
+          <div class="cover__cap">
+            <span class="cover__title">You Couldn't Ask For a More Beautiful Day</span>
+            <span class="cover__year"><time datetime="2023">2023</time></span>
+            <span class="cover__for">The Weather Holds</span>
+            <span class="cover__role">Composer, producer</span>
+          </div>
+        </a>
+        <a class="cover" href="https://dfduo.bandcamp.com/album/accretion" target="_blank" rel="noopener">
+          <picture>
+            <source type="image/avif" srcset="/img/covers/df-accretion-400.avif 400w, /img/covers/df-accretion-640.avif 640w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <source type="image/webp" srcset="/img/covers/df-accretion-400.webp 400w, /img/covers/df-accretion-640.webp 640w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <img src="/img/covers/df-accretion-640.jpg" width="640" height="640" alt="Accretion, DF, album cover" loading="lazy" decoding="async">
+          </picture>
+          <div class="cover__cap">
+            <span class="cover__title">Accretion</span>
+            <span class="cover__year"><time datetime="2021">2021</time></span>
+            <span class="cover__for">DF</span>
+            <span class="cover__role">Producer</span>
+          </div>
+        </a>
+        <a class="cover" href="https://www.discogs.com/release/14549341-Jean-Michel-Blais-Matthias-Maxime" target="_blank" rel="noopener">
+          <picture>
+            <source type="image/avif" srcset="/img/covers/blais-matthias-et-maxime-ost-400.avif 400w, /img/covers/blais-matthias-et-maxime-ost-640.avif 640w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <source type="image/webp" srcset="/img/covers/blais-matthias-et-maxime-ost-400.webp 400w, /img/covers/blais-matthias-et-maxime-ost-640.webp 640w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <img src="/img/covers/blais-matthias-et-maxime-ost-640.jpg" width="640" height="640" alt="Matthias &amp; Maxime (original soundtrack), Jean-Michel Blais, album cover" loading="lazy" decoding="async">
+          </picture>
+          <div class="cover__cap">
+            <span class="cover__title">Matthias &amp; Maxime (original soundtrack)</span>
+            <span class="cover__year"><time datetime="2019">2019</time></span>
+            <span class="cover__for">Jean-Michel Blais</span>
+            <span class="cover__role">Producer</span>
+          </div>
+        </a>
+        <a class="cover" href="https://crom-lus.bandcamp.com/album/altered-states" target="_blank" rel="noopener">
+          <picture>
+            <source type="image/avif" srcset="/img/covers/cromlus-altered-states-400.avif 400w, /img/covers/cromlus-altered-states-800.avif 800w, /img/covers/cromlus-altered-states-1200.avif 1200w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <source type="image/webp" srcset="/img/covers/cromlus-altered-states-400.webp 400w, /img/covers/cromlus-altered-states-800.webp 800w, /img/covers/cromlus-altered-states-1200.webp 1200w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <img src="/img/covers/cromlus-altered-states-800.jpg" width="800" height="800" alt="Altered States (EP), Cromlus, album cover" loading="lazy" decoding="async">
+          </picture>
+          <div class="cover__cap">
+            <span class="cover__title">Altered States (EP)</span>
+            <span class="cover__year"><time datetime="2018">2018</time></span>
+            <span class="cover__for">Cromlus</span>
+            <span class="cover__role">Producer</span>
+          </div>
+        </a>
+        <a class="cover" href="https://shop.arts-crafts.ca/products/jean-michel-blais-eviction-sessions" target="_blank" rel="noopener">
+          <picture>
+            <source type="image/avif" srcset="/img/covers/blais-eviction-sessions-400.avif 400w, /img/covers/blais-eviction-sessions-640.avif 640w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <source type="image/webp" srcset="/img/covers/blais-eviction-sessions-400.webp 400w, /img/covers/blais-eviction-sessions-640.webp 640w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <img src="/img/covers/blais-eviction-sessions-640.jpg" width="640" height="640" alt="Eviction Sessions, Jean-Michel Blais, album cover" loading="lazy" decoding="async">
+          </picture>
+          <div class="cover__cap">
+            <span class="cover__title">Eviction Sessions</span>
+            <span class="cover__year"><time datetime="2018">2018</time></span>
+            <span class="cover__for">Jean-Michel Blais</span>
+            <span class="cover__role">Producer</span>
+          </div>
+        </a>
+        <a class="cover" href="https://jeanmichelblais.bandcamp.com/album/il-deluxe-edition" target="_blank" rel="noopener">
+          <picture>
+            <source type="image/avif" srcset="/img/covers/blais-il-400.avif 400w, /img/covers/blais-il-640.avif 640w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <source type="image/webp" srcset="/img/covers/blais-il-400.webp 400w, /img/covers/blais-il-640.webp 640w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <img src="/img/covers/blais-il-640.jpg" width="640" height="640" alt="Il, Jean-Michel Blais, album cover" loading="lazy" decoding="async">
+          </picture>
+          <div class="cover__cap">
+            <span class="cover__title">Il</span>
+            <span class="cover__year"><time datetime="2016">2016</time></span>
+            <span class="cover__for">Jean-Michel Blais</span>
+            <span class="cover__role">Producer</span>
+          </div>
+        </a>
+        <a class="cover" href="https://bufflo.bandcamp.com/album/harvest-the-flood-album-version" target="_blank" rel="noopener">
+          <picture>
+            <source type="image/avif" srcset="/img/covers/harvest-the-flood-400.avif 400w, /img/covers/harvest-the-flood-800.avif 800w, /img/covers/harvest-the-flood-1200.avif 1200w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <source type="image/webp" srcset="/img/covers/harvest-the-flood-400.webp 400w, /img/covers/harvest-the-flood-800.webp 800w, /img/covers/harvest-the-flood-1200.webp 1200w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <img src="/img/covers/harvest-the-flood-800.jpg" width="800" height="800" alt="HARVEST // THE FLOOD, Bufflo, album cover" loading="lazy" decoding="async">
+          </picture>
+          <div class="cover__cap">
+            <span class="cover__title">HARVEST // THE FLOOD</span>
+            <span class="cover__year">2015-2016</span>
+            <span class="cover__for">Bufflo</span>
+            <span class="cover__role">Composition, projection, painting, performance</span>
+          </div>
+        </a>
+        <a class="cover" href="https://balconybalconybalcony.bandcamp.com/album/balcony" target="_blank" rel="noopener">
+          <picture>
+            <source type="image/avif" srcset="/img/covers/balcony-ep-400.avif 400w, /img/covers/balcony-ep-800.avif 800w, /img/covers/balcony-ep-900.avif 900w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <source type="image/webp" srcset="/img/covers/balcony-ep-400.webp 400w, /img/covers/balcony-ep-800.webp 800w, /img/covers/balcony-ep-900.webp 900w" sizes="(max-width: 600px) calc(100vw - 2 * var(--page-margin)), 50vw">
+            <img src="/img/covers/balcony-ep-800.jpg" width="800" height="800" alt="Balcony (self-titled EP), Balcony, album cover" loading="lazy" decoding="async">
+          </picture>
+          <div class="cover__cap">
+            <span class="cover__title">Balcony (self-titled EP)</span>
+            <span class="cover__year"><time datetime="2012">2012</time></span>
+            <span class="cover__for">Balcony</span>
+            <span class="cover__role">Co-composer, with David Martinez</span>
+          </div>
+        </a>
+        </div>
+      </div>
     </section>
   </main>
   <footer class="site-footer">
