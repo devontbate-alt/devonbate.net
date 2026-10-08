@@ -13,7 +13,7 @@ Contact: [devon.t.bate@gmail.com](mailto:devon.t.bate@gmail.com); [Instagram @bu
 
 ## Work
 
-73 entries, newest first: title; for; year; role.
+75 entries, newest first: title; for; year; role.
 
 - [Askîwan](https://www.devonbate.com/work/#askiwan): Tyson Houseman, with Jonathon Adams and Leah Weitzner; ongoing; Composition and live performance; link: https://www.tysonhouseman.com/askiwan
 - [Mouvement Perpétuel](https://www.devonbate.com/work/#mouvement-perpetuel): Mouvement Perpétuel; ongoing; Resident composer and sound designer
@@ -25,6 +25,7 @@ Contact: [devon.t.bate@gmail.com](mailto:devon.t.bate@gmail.com); [Instagram @bu
 - [Mercy](https://www.devonbate.com/work/#mercy): Philip Szporer; 2025; Score and sound design; link: https://www.philipszporer.com/mercy
 - [Skite'kmujuekati'k (At the Place of Ghosts)](https://www.devonbate.com/work/#skitekmujuekatik): Bretten Hannam; 2025; Co-composer, with Jeremy Dutcher; link: https://en.wikipedia.org/wiki/At_the_Place_of_Ghosts
 - [Improvisation on Pas de deux](https://www.devonbate.com/work/#beatrice-ferreira-pas-de-deux): Beatrice Ferreira; 2024; Co-composer
+- [Je me souviens à toi](https://www.devonbate.com/work/#naggar-tremblay-je-me-souviens-a-toi): Rose Naggar-Tremblay; 2024; Mixing; link: https://music.apple.com/us/album/je-me-souviens-%C3%A0-toi-ep/1719642621
 - [Motewolonuwok](https://www.devonbate.com/work/#dutcher-motewolonuwok): Jeremy Dutcher; 2023; Producer; link: https://www.secretcityrecords.com/products/motewolonuwok
 - [Pisuwin](https://www.devonbate.com/work/#pisuwin): Atlantic Ballet of Canada; 2023; Sound design and composition; link: https://prismaticfestival.com/index.php/2023-pisuwin/
 - [Public Private Parts (podcast)](https://www.devonbate.com/work/#public-private-parts-podcast): 2023; Editing, post-production and sound design; link: https://www.gerardxreyes.com/podcast
@@ -34,7 +35,6 @@ Contact: [devon.t.bate@gmail.com](mailto:devon.t.bate@gmail.com); [Instagram @bu
 - [Most of the Time We Are Just Waiting](https://www.devonbate.com/work/#most-of-the-time-we-are-just-waiting): Molly Shears; 2022; Sound design; link: https://letterboxd.com/film/most-of-the-time-we-are-just-waiting/
 - [Accretion](https://www.devonbate.com/work/#df-accretion): DF; 2021; Producer; link: https://dfduo.bandcamp.com/album/accretion
 - [Inquiry Into Time and Perception, Study #2](https://www.devonbate.com/work/#inquiry-into-time-and-perception-2): Philip Szporer; 2021; Sound designer; link: https://www.philipszporer.com/study-2
-- [Public/Private Parts (short film)](https://www.devonbate.com/work/#public-private-parts-film): Gerard Reyes; 2021; Sound design and music composition; link: https://fta.ca/en/programme/public-private-parts-ou-lorigine-du-monde
 - [Public/Private Parts ou L'Origine du monde (dance performance)](https://www.devonbate.com/work/#public-private-parts): Gerard Reyes; 2021; Sound design and music composition; link: https://usine-c.com/spectacle/public-private-parts
 - [Chattermarks](https://www.devonbate.com/work/#chattermarks): Cabal Theatre; 2020; Composition, sound design; link: https://www.lachapelle.org/en/shows/chattermarks
 - [Fight On! Part 2](https://www.devonbate.com/work/#fight-on-part-2): Infinithéâtre; 2019-2020; Sound design; link: https://www.thesuburban.com/arts_and_entertainment/arts/fight-on-is-the-most-ambitious-production-of-infinith-tre-s-30-year-history/article_680b2cd2-5a5b-11ea-9b01-33007d4c216e.html
@@ -85,8 +85,10 @@ Contact: [devon.t.bate@gmail.com](mailto:devon.t.bate@gmail.com); [Instagram @bu
 - [Rhinoceros](https://www.devonbate.com/work/#rhinoceros): Liberal Arts Theatre Society; 2012; Actor, designer and engineer
 - [Chorus I](https://www.devonbate.com/work/#chorus-i): Tyson Houseman and Nien Tzu Weng; Sound designer
 - [CRU Project](https://www.devonbate.com/work/#cru-project): Mouvement Perpétuel; On-set recording and composition; link: https://lefifa.com/en/catalog/cru-lady-c
+- [Ecstatic Unity](https://www.devonbate.com/work/#ecstatic-unity): Gerard Reyes; Sound design; link: https://www.gerardxreyes.com/films
 - [Nils Frahm (official music video)](https://www.devonbate.com/work/#nils-frahm-video): Bufflo; Co-director, music; link: https://vimeo.com/93659223
 - [One](https://www.devonbate.com/work/#one): Julia Milz and Philip Fortin; Composition
+- [The Key to Dreams](https://www.devonbate.com/work/#the-key-to-dreams): Gerard Reyes; Sound design; link: https://www.gerardxreyes.com/films
 - [The Kidnapping](https://www.devonbate.com/work/#the-kidnapping): Colin Riendeau; On-set recording and audio post-production
 
 ## Publications
