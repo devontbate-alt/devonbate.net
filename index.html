@@ -141,6 +141,8 @@ code,kbd{font-family:var(--font-mono);font-size:0.92em}
 .row { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: var(--space-6); row-gap: var(--space-2); padding: var(--space-4) 0; border-bottom: 1px solid var(--line-hairline); }
 .row__title { font-size: var(--size-subheading); font-weight: var(--weight-medium); letter-spacing: var(--tracking-heading); line-height: var(--leading-tight); }
 .rows--featured .row__title { font-size: var(--size-heading); }
+.row__title a { border-bottom: none; color: inherit; }
+.row__title a:hover { color: var(--signal-500); }
 .row__year { font-family: var(--font-meta); font-size: var(--size-meta); color: var(--text-faint); text-align: right; min-width: 42px; }
 .row__for { font-size: var(--size-body-sm); color: var(--text-secondary); }
 .row__role { font-family: var(--font-meta); font-size: var(--size-meta); letter-spacing: var(--tracking-meta); color: var(--text-muted); text-align: right; max-width: 32ch; }
@@ -218,7 +220,7 @@ padding-right: max(var(--page-margin), env(safe-area-inset-right));
 .hero { min-height: 50vh; }
 }
 @media (pointer: coarse) {
-.site-nav a, .site-footer__links a, .section-head a, .row__links a, .cv__row a, .citation__title a, .site-footer__email, .not-found a { padding-block: 14px; }
+.site-nav a, .site-footer__links a, .section-head a, .row__title a, .row__links a, .cv__row a, .citation__title a, .site-footer__email, .not-found a { padding-block: 14px; }
 .row__links a, .cv__row a, .site-footer__email, .not-found a { border-bottom: none; text-decoration: underline; text-decoration-color: var(--line-hairline); text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .row__links a:hover, .cv__row a:hover, .site-footer__email:hover, .not-found a:hover { text-decoration-color: var(--line-accent); }
 .chip { min-height: 44px; padding: 0 12px; }
@@ -254,40 +256,40 @@ padding-right: max(var(--page-margin), env(safe-area-inset-right));
       </div>
       <ol class="rows rows--featured">
       <li class="row" id="dutcher-wolastoqiyik-lintuwakonawa">
-        <span class="row__title">Wolastoqiyik Lintuwakonawa</span>
+        <span class="row__title"><a href="https://jeremydutcher1.bandcamp.com/album/wolastoqiyik-lintuwakonawa" target="_blank" rel="noopener">Wolastoqiyik Lintuwakonawa</a></span>
         <span class="row__year"><time datetime="2018">2018</time></span>
         <span class="row__for">Jeremy Dutcher</span>
         <span class="row__role">Producer</span>
         <span class="row__awards">Winner, 2018 Polaris Prize; Winner, 2019 Juno Award, Indigenous Album of the Year</span>
       </li>
       <li class="row" id="blais-aubades">
-        <span class="row__title">Aubades</span>
+        <span class="row__title"><a href="https://classical.music.apple.com/ca/album/1587381634" target="_blank" rel="noopener">Aubades</a></span>
         <span class="row__year"><time datetime="2022">2022</time></span>
         <span class="row__for">Jean-Michel Blais</span>
         <span class="row__role">Producer</span>
         <span class="row__awards">Nominated, 2023 Juno Award, Instrumental Album of the Year</span>
       </li>
       <li class="row" id="skitekmujuekatik">
-        <span class="row__title">Skite'kmujuekati'k (At the Place of Ghosts)</span>
+        <span class="row__title"><a href="https://en.wikipedia.org/wiki/At_the_Place_of_Ghosts" target="_blank" rel="noopener">Skite'kmujuekati'k (At the Place of Ghosts)</a></span>
         <span class="row__year"><time datetime="2025">2025</time></span>
         <span class="row__for">Bretten Hannam</span>
         <span class="row__role">Co-composer, with Jeremy Dutcher</span>
         <span class="row__awards">Co-composed the score that won Best Atlantic Original Score at the Atlantic International Film Festival</span>
       </li>
       <li class="row" id="caustics">
-        <span class="row__title">Caustics</span>
+        <span class="row__title"><a href="https://www.tysonhouseman.com/caustics" target="_blank" rel="noopener">Caustics</a></span>
         <span class="row__year"><time datetime="2027">2027</time></span>
         <span class="row__for">Tyson Houseman</span>
         <span class="row__role">Composition and sound design</span>
       </li>
       <li class="row" id="pisuwin">
-        <span class="row__title">Pisuwin</span>
+        <span class="row__title"><a href="https://prismaticfestival.com/index.php/2023-pisuwin/" target="_blank" rel="noopener">Pisuwin</a></span>
         <span class="row__year"><time datetime="2023">2023</time></span>
         <span class="row__for">Atlantic Ballet of Canada</span>
         <span class="row__role">Sound design and composition</span>
       </li>
       <li class="row" id="askiwan">
-        <span class="row__title">Askîwan</span>
+        <span class="row__title"><a href="https://www.tysonhouseman.com/askiwan" target="_blank" rel="noopener">Askîwan</a></span>
         <span class="row__year">ongoing</span>
         <span class="row__for">Tyson Houseman, with Jonathon Adams and Leah Weitzner</span>
         <span class="row__role">Composition and live performance</span>
