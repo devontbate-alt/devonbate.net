@@ -23,6 +23,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="/fonts/archivo-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/archivo-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+<script>if(!('PageRevealEvent' in window))document.documentElement.classList.add('no-vt')</script>
 <style>:root{
 --ink-1000:#000000;--ink-900:#0B0B0C;--ink-800:#17171A;--ink-700:#2A2A2D;--ink-600:#45454A;
 --ink-500:#55555A;--ink-400:#76767B;--ink-300:#A9A8A4;--ink-200:#CFCDC7;--ink-100:#E2DFD8;
@@ -221,9 +222,17 @@ code,kbd{font-family:var(--font-mono);font-size:0.92em}
 .site-footer__updated { font-family: var(--font-meta); font-size: var(--size-meta); color: var(--text-faint); align-self: end; }
 @view-transition { navigation: auto; }
 .site-header { view-transition-name: site-header; }
-::view-transition-old(root), ::view-transition-new(root) { animation-duration: var(--duration-base); }
+html:active-view-transition-type(scrolled) .site-header { view-transition-name: none; }
+::view-transition-old(root) { animation: vt-out var(--duration-fast) var(--ease-standard) both; }
+::view-transition-new(root) { animation: vt-in var(--duration-base) var(--ease-standard) both; }
+@keyframes vt-out { to { opacity: 0; } }
+@keyframes vt-in { from { opacity: 0; } }
+a.is-leaving, .site-nav a:active, .site-footer__links a:active, .all-work__link:active, .row__title a:active, .cover:active, .not-found a:active { color: var(--signal-500); }
+html.no-vt body { animation: vt-in var(--duration-base) var(--ease-standard); transition: opacity var(--duration-fast) var(--ease-standard); }
+html.no-vt.is-fading body { opacity: 0; }
 @media (prefers-reduced-motion: reduce) {
 ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
+html.no-vt body { animation: none; }
 }
 .rows, .list { list-style: none; padding: 0; }
 .rows { margin: 0; }
@@ -286,5 +295,46 @@ padding-right: max(var(--page-margin), env(safe-area-inset-right));
     <div class="site-footer__updated">Last updated September 2026</div>
   </footer>
 </div>
+<script>
+(function () {
+  var html = document.documentElement;
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var vt = 'PageRevealEvent' in window;
+  function pastHeader() {
+    var h = document.querySelector('.site-header');
+    return !!h && h.getBoundingClientRect().bottom < 0;
+  }
+  addEventListener('pageswap', function (e) {
+    if (!e.viewTransition) return;
+    var s = pastHeader();
+    try { sessionStorage.setItem('vt-scrolled', s ? '1' : ''); } catch (err) {}
+    if (s) e.viewTransition.types.add('scrolled');
+  });
+  addEventListener('pagereveal', function (e) {
+    if (!e.viewTransition) return;
+    var s = '';
+    try { s = sessionStorage.getItem('vt-scrolled') || ''; sessionStorage.removeItem('vt-scrolled'); } catch (err) {}
+    if (s) e.viewTransition.types.add('scrolled');
+  });
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    if (a.target && a.target !== '_self') return;
+    var url;
+    try { url = new URL(a.href, location.href); } catch (err) { return; }
+    if (url.origin !== location.origin) return;
+    if (url.pathname === location.pathname && url.hash) return;
+    a.classList.add('is-leaving');
+    if (vt || reduced) return;
+    e.preventDefault();
+    html.classList.add('is-fading');
+    setTimeout(function () { location.href = url.href; }, 150);
+  });
+  addEventListener('pageshow', function () {
+    html.classList.remove('is-fading');
+    document.querySelectorAll('a.is-leaving').forEach(function (a) { a.classList.remove('is-leaving'); });
+  });
+})();
+</script>
 </body>
 </html>
