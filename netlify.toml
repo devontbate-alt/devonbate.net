@@ -1,4 +1,4 @@
-# devonbate.com. Plain static site, no build step.
+# devonbate.net. Plain static site, no build step.
 # Per-path headers (caching, admin noindex) live in _headers.
 
 [build]

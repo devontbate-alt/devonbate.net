@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 Disallow: /admin/
-Sitemap: https://www.devonbate.com/sitemap.xml
+Sitemap: https://devonbate.net/sitemap.xml
